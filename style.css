@@ -1,0 +1,258 @@
+/* Add CSS here */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    background-color: #fdfdfd;
+    background: linear-gradient(to top, #fe8595 40%, #fdfdfd 40% 100%);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    min-width: 80%;
+    margin-top: 7rem;
+    max-width: 1200px;
+    animation: scaleUp 1s ease-in-out;
+    transform-origin: center center;
+    position: relative;
+}
+
+.header {
+    width: 340px;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 4rem;
+    border-radius: 3rem;
+    transition: 0.2s;
+}
+
+h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+.number {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translate(0, -50%);
+    color: #f3f3f3;
+    letter-spacing: 10px;
+    font-size: 10rem;
+    z-index: -1 ;
+
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+}
+
+.cards > span {
+    position: absolute;
+    top: -30%;
+    right: 0;
+    padding: 1rem;
+    font-size: 2rem;
+    color: #fe8595;
+    border: 1px solid #f3f3f3;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.cards > span:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 9px 0px;
+}
+
+.card .selected {
+    border: 2px solid #fe8595 !important;
+  }
+
+.card {
+    /* display: block; */
+    width: 40%;
+    /* max-width: 400px; */
+    min-height: 15rem;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border: 2px solid #f3f3f3;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    transition: .2s;
+}
+
+.selected {
+    border: 2px solid #fe8595 !important;
+  }
+
+.card:hover {
+    scale: 1.04;
+    box-shadow: rgba(0, 0, 0, 0.1) -10px 9px 25px -10px;
+
+}
+
+.card:hover a {
+    background-color: #7e99fd;
+    color: #fff;
+}
+
+.card h2 {
+    display: inline-block;
+    font-weight: bold;
+    margin: 1.5rem 0;
+}
+
+
+.cards > span:active, .card a:active, .btns:active {
+    scale: 0.95;
+} 
+
+main img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 100%;
+    margin: 0 auto;
+    transition: .2s;
+}
+
+
+p, a {
+    font-size: 1rem;
+    font-weight: 400;
+}
+a {
+    text-decoration: none;
+    color: lightgray;
+    display: inline-block;
+}
+
+.card a {
+    padding: 1rem 4rem;
+    border-radius: 5px;
+    border: 1px solid #f3f3f3;
+    transition: .2s;
+}
+
+.card a:hover, .card a.active {
+    background-color: #657aca;
+    color: #fff;
+}
+
+.btns {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  bottom: -25%;
+  right: 0;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background-color: transparent;
+  color: #fff;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 14rem;
+
+}
+
+.btns a {
+    /* font-size: .65rem; */
+    transition: .2s;
+    padding: 0.5rem 0;
+    color: #fff;
+
+}
+
+.btns span {
+    padding: 0.5rem 0;
+
+}
+
+.btns span::before {
+    content: "";
+    width: 1px;
+    border-left: 1px solid #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 35%;
+  }
+
+.btns:hover {
+    box-shadow: rgba(50, 50, 93, 0.5) 0px 5px 15px -3px;
+}
+
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+   
+    .container {
+        margin: 1rem;
+    }
+    .header {
+        margin-top: 2rem;
+    }
+    .cards {
+        max-width: 100%;
+    }
+    .cards span {
+        top: -8%;
+    }
+    .card {
+        width: 100%;
+        /* width: 330px;
+        max-width: 100%; */
+        margin: 0 auto;
+    }
+    .card:hover {
+        scale: 1;
+    }
+
+    .cards {
+        flex-direction: column;
+        margin-bottom: 5rem;
+
+    }
+
+    .btns {
+        position: relative;
+        margin-left: auto;
+        margin-bottom: 2rem;
+        bottom: -6%;
+    }
+    
+}
+
